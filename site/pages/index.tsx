@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Keyboard from 'react-simple-keyboard';
 
 const Home: NextPage = () => {
   return (
@@ -143,9 +144,21 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        <Keyboard
+          onChange={onChange}
+          onKeyPress={onKeyPress}
+        />
       </main>
     </div>
   )
+}
+
+function onChange(input) {
+  console.log("Input changed", input);
+}
+
+function onKeyPress(button) {
+  console.log("Button pressed", button);
 }
 
 export default Home
