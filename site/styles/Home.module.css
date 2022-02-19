@@ -56,7 +56,11 @@
   background: #ccb85d;
 }
 
-.bad {
+.current {
+  background: #9da0a1;
+}
+
+.none {
   background: #b3b6b8;
 }
 

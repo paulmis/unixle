@@ -1,14 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Keyboard from 'react-simple-keyboard';
 import UnixleSet from './unixle';
-
-import {KeyboardLayoutObject} from 'react-simple-keyboard'
-var kela: KeyboardLayoutObject = {
-    default: ["q w e r t y u i o p {bksp}", "a s d f g h j k l {enter}", "z x x c v b n m - ."]
-}
 
 const Home: NextPage = () => {
   return (
@@ -25,8 +19,11 @@ const Home: NextPage = () => {
           <Keyboard
             onChange={onChange}
             onKeyPress={onKeyPress}
-            layout={kela}
-            
+            layout={{
+                default: ["q w e r t y u i o p {bksp}", 
+                          "a s d f g h j k l {enter}", 
+                          "z x x c v b n m - ."]
+            }}
           />
         </div>
       </main>
@@ -36,9 +33,11 @@ const Home: NextPage = () => {
 
 function onChange(input) {
   console.log("Input changed", input);
+
 }
 
 function onKeyPress(button) {
+  document.getElementsByTagName('UnixleSet')
   console.log("Button pressed", button);
 }
 
