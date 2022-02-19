@@ -23,19 +23,19 @@
   gap: 3.5rem;
 }
 
-.wordle {
+.unixle {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.wordleRow {
+.unixleRow {
   display: flex;
   flex-direction: row;
   gap: 0.4rem;
 }
 
-.wordleTile {
+.unixleTile {
   display: flex;
   width: 3rem;
   height: 3rem;

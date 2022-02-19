@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Keyboard from 'react-simple-keyboard';
-import Wordle from './gen';
+import UnixleSet from './unixle';
 
 import {KeyboardLayoutObject} from 'react-simple-keyboard'
 var kela: KeyboardLayoutObject = {
@@ -20,12 +20,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.wordles}>
-          <Wordle attempts={5} length={4}></Wordle>
-          <Wordle attempts={5} length={4}></Wordle>
-          <Wordle attempts={5} length={4}></Wordle>
-          <Wordle attempts={5} length={4}></Wordle>
-        </div>
+        <UnixleSet attempts={5} cmds={["grep", "nano", "sudo", "nmap"]}/>
         <div className={styles.keyboardWrapper}>
           <Keyboard
             onChange={onChange}
