@@ -59,3 +59,7 @@
 .bad {
   background: #b3b6b8;
 }
+
+.keyboardWrapper {
+  max-width: 800px;
+}

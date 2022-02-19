@@ -3,6 +3,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Keyboard from 'react-simple-keyboard';
+import Wordle from './gen';
+
+import {KeyboardLayoutObject} from 'react-simple-keyboard'
+var kela: KeyboardLayoutObject = {
+    default: ["q w e r t y u i o p {bksp}", "a s d f g h j k l {enter}", "z x x c v b n m - ."]
+}
 
 const Home: NextPage = () => {
   return (
@@ -15,139 +21,19 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <div className={styles.wordles}>
-          <div className={styles.wordle}>
-            <div className={styles.wordleRow}>
-              <div className={`${styles.wordleTile} ${styles.partial}`}>G</div>
-              <div className={`${styles.wordleTile} ${styles.bad}`}>R</div>
-              <div className={`${styles.wordleTile} ${styles.exact}`}>E</div>
-              <div className={`${styles.wordleTile} ${styles.bad}`}>P</div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-          </div>
-          <div className={styles.wordle}>
-            <div className={styles.wordleRow}>
-              <div className={`${styles.wordleTile} ${styles.bad}`}>G</div>
-              <div className={`${styles.wordleTile} ${styles.bad}`}>R</div>
-              <div className={`${styles.wordleTile} ${styles.exact}`}>E</div>
-              <div className={`${styles.wordleTile} ${styles.exact}`}>P</div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-          </div>
-          <div className={styles.wordle}>
-            <div className={styles.wordleRow}>
-              <div className={`${styles.wordleTile} ${styles.partial}`}>G</div>
-              <div className={`${styles.wordleTile} ${styles.partial}`}>R</div>
-              <div className={`${styles.wordleTile} ${styles.partial}`}>E</div>
-              <div className={`${styles.wordleTile} ${styles.bad}`}>P</div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-          </div>
-          <div className={styles.wordle}>
-            <div className={styles.wordleRow}>
-              <div className={`${styles.wordleTile} ${styles.partial}`}>G</div>
-              <div className={`${styles.wordleTile} ${styles.bad}`}>R</div>
-              <div className={`${styles.wordleTile} ${styles.bad}`}>E</div>
-              <div className={`${styles.wordleTile} ${styles.bad}`}>P</div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-            <div className={styles.wordleRow}>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-              <div className={styles.wordleTile}></div>
-            </div>
-          </div>
+          <Wordle attempts={5} length={4}></Wordle>
+          <Wordle attempts={5} length={4}></Wordle>
+          <Wordle attempts={5} length={4}></Wordle>
+          <Wordle attempts={5} length={4}></Wordle>
         </div>
-        <Keyboard
-          onChange={onChange}
-          onKeyPress={onKeyPress}
-        />
+        <div className={styles.keyboardWrapper}>
+          <Keyboard
+            onChange={onChange}
+            onKeyPress={onKeyPress}
+            layout={kela}
+            
+          />
+        </div>
       </main>
     </div>
   )

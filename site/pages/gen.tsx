@@ -1,59 +1,52 @@
 import React from "react";
+import styles from '../styles/Home.module.css'
 
 type WordleProps = {
     current: number
 }
 
-export default class Wordle extends React.Component {
-    key: string;            // the answer
-    attempts: number;       // no. of allowed attempts
-
-    constructor(key: string, attempts: number) {
-        super({current: 0});
-        this.key = key;
-        this.attempts = attempts;
-    }
-
-    public render() {
-        return (
-            <div className="wordle">
-                {[...Array(this.attempts)].map((el, index) => <WordleRow key={index}/>)}
-            </div>
-        )
-    }
-
-    public check(guess: string) {
-
-    }
-
-    public get length() {
-        return this.key.length;
-    }
+interface UnixleProps {
+    attempts: number,
+    length: number
 }
 
-class WordleRow extends React.Component {
-    length: number;
-
-    constructor(length: number) {
-        super({});
-        this.length = length;
+export default class Wordle extends React.Component<UnixleProps> {
+    constructor(props: UnixleProps, key: string, attempts: number) {
+        super(props);
     }
 
     public render() {
         return (
-            <div className="wordleRow">
-                {[...Array(this.length)].map((el, index) => <WordleTile/>)}
+            <div className={styles.wordle}>
+                {[...Array(this.props.attempts)].map((el, index) => <WordleRow length={this.props.length} key={index}/>)}
             </div>
         )
     }
 }
 
-type WordleTileProps = {
-    char: string
+interface UnixleRowProps {
+    length: number
+}
+
+class WordleRow extends React.Component<UnixleRowProps> {
+    constructor(props: UnixleRowProps) {
+        super(props);
+    }
+
+    public render() {
+        return (
+            <div className={styles.wordleRow}>
+                {[...Array(this.props.length)].map((el, index) => <WordleTile key={index}/>)}
+            </div>
+        )
+    }
 }
 
 class WordleTile extends React.Component {
+    constructor(props: any) {
+        super(props);
+    }
     public render() {
-        return (<div className="wordleTile"/>)
+        return (<div className={styles.wordleTile}/>)
     }
 }
